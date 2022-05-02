@@ -58,8 +58,6 @@ class SST(nn.Module):
         batchSize = input.size(0)
 
         featureMap = self.backbone(input)                                            # (BatchSize, Channel, imgSize, imgSize)
-        import pdb
-        pdb.set_trace()
 
         if featureMap.size(1) != self.imageFeatureDim:
             featureMap = self.changeChannel(featureMap)                              # (BatchSize, imgFeatureDim, imgSize, imgSize)
