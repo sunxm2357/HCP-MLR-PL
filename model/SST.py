@@ -19,6 +19,7 @@ class SST(nn.Module):
 
         self.backbone = resnet101()
 
+
         if imageFeatureDim != 2048:
             self.changeChannel = nn.Sequential(nn.Conv2d(2048, imageFeatureDim, kernel_size=1, stride=1, bias=False),
                                                nn.BatchNorm2d(imageFeatureDim),)
@@ -55,6 +56,9 @@ class SST(nn.Module):
         batchSize = input.size(0)
 
         featureMap = self.backbone(input)                                            # (BatchSize, Channel, imgSize, imgSize)
+        import pdb
+        pdb.set_trace()
+
         if featureMap.size(1) != self.imageFeatureDim:
             featureMap = self.changeChannel(featureMap)                              # (BatchSize, imgFeatureDim, imgSize, imgSize)
 
