@@ -170,7 +170,7 @@ def modified_resnet50():
             new_k = k.replace('visual.', '')
             filtered_state_dict[new_k] = v
     convert_weights(model)
-    missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=False)
+    missing_keys, unexpected_keys = model.load_state_dict(filtered_state_dict, strict=False)
     print('missing keys :', missing_keys)
     print('unexpected_keys :', unexpected_keys)
     model.float()
@@ -196,7 +196,7 @@ def modified_resnet101():
             new_k = k.replace('visual.', '')
             filtered_state_dict[new_k] = v
     convert_weights(model)
-    missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=False)
+    missing_keys, unexpected_keys = model.load_state_dict(filtered_state_dict, strict=False)
     print('missing keys :', missing_keys)
     print('unexpected_keys :', unexpected_keys)
     model.float()
