@@ -158,8 +158,8 @@ def modified_resnet50():
     model_path = _download(_MODELS['RN50'])
     try:
         # loading JIT archive
-        model = torch.jit.load(model_path, map_location="cpu").eval()
-        state_dict = None
+        model_new = torch.jit.load(model_path, map_location="cpu").eval()
+        state_dict = model_new.state_dict()
 
     except RuntimeError:
         state_dict = torch.load(model_path, map_location="cpu")
@@ -184,8 +184,8 @@ def modified_resnet101():
     model_path = _download(_MODELS['RN101'])
     try:
         # loading JIT archive
-        model = torch.jit.load(model_path, map_location="cpu").eval()
-        state_dict = None
+        model_new = torch.jit.load(model_path, map_location="cpu").eval()
+        state_dict = model_new.state_dict()
 
     except RuntimeError:
         state_dict = torch.load(model_path, map_location="cpu")
