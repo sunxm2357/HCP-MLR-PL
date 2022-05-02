@@ -13,7 +13,7 @@ logger.setLevel(logging.INFO)
 
 # Dataset Path
 # =============================================================================
-prefixPathCOCO = '/data1/dataset/MS-COCO_2014/'
+prefixPathCOCO = '/research/sunxm/datasets/mscoco_2014'
 prefixPathVG = '/data5/VG/'
 prefixPathVOC2007 = '/data1/dataset/voc2007/VOCdevkit/VOC2007/'
 # =============================================================================
