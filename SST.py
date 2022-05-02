@@ -1,3 +1,4 @@
+import os.path
 import sys
 import time
 import logging
@@ -30,6 +31,8 @@ def main():
 
     # Bulid Logger
     formatter = logging.Formatter('%(asctime)s %(levelname)-8s %(message)s')
+    if not os.path.exists('exp/log/'):
+        os.makedirs('exp/log/')
     file_path = 'exp/log/{}.log'.format(args.post)
     file_handler = logging.FileHandler(file_path)
     file_handler.setFormatter(formatter)
