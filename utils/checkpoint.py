@@ -29,7 +29,7 @@ def save_code_file(args):
 
     prefixPath = os.path.join('exp/code/', args.post)
     if not os.path.exists(prefixPath):
-        os.mkdir(prefixPath)
+        os.makedirs(prefixPath)
 
     fileNames = []
     if args.mode == 'SST':
@@ -43,7 +43,7 @@ def save_checkpoint(args, state, isBest):
 
     outputPath = os.path.join('exp/checkpoint/', args.post)
     if not os.path.exists(outputPath):
-        os.mkdir(outputPath)
+        os.makedirs(outputPath)
 
     torch.save(state, os.path.join(outputPath, 'Checkpoint_Current.pth'))
     if isBest:
