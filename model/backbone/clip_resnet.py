@@ -173,7 +173,7 @@ def modified_resnet50():
     missing_keys, unexpected_keys = model.load_state_dict(filtered_state_dict, strict=False)
     print('missing keys :', missing_keys)
     print('unexpected_keys :', unexpected_keys)
-    model.float()
+    # model.float()
     return model
 
 
@@ -199,7 +199,7 @@ def modified_resnet101():
     missing_keys, unexpected_keys = model.load_state_dict(filtered_state_dict, strict=False)
     print('missing keys :', missing_keys)
     print('unexpected_keys :', unexpected_keys)
-    model.float()
+    # model.float()
     return model
 
 
