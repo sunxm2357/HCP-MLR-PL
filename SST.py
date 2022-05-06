@@ -83,8 +83,8 @@ def main():
 
     for p in model.backbone.parameters():
         p.requires_grad = False
-    # for p in model.backbone.layer4.parameters():
-    #     p.requires_grad = True
+    for p in model.backbone.layer4.parameters():
+        p.requires_grad = True
     optimizer = torch.optim.Adam(filter(lambda p : p.requires_grad, model.parameters()), lr=args.lr, weight_decay=args.weightDecay)
 
     scheduler = lr_scheduler.StepLR(optimizer, step_size=args.stepEpoch, gamma=0.1)
@@ -126,7 +126,7 @@ def Train(train_loader, model, criterion, optimizer, writer, epoch, args):
 
     model.train()
     model.backbone.eval()
-    # model.backbone.layer4.train()
+    model.backbone.layer4.train()
 
     loss, loss1, loss2, loss3, loss4, loss5 = AverageMeter(), AverageMeter(), AverageMeter(), AverageMeter(), AverageMeter(), AverageMeter()
     batch_time, data_time = AverageMeter(), AverageMeter()
