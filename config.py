@@ -15,7 +15,7 @@ logger.setLevel(logging.INFO)
 # =============================================================================
 prefixPathCOCO = '/projectnb/ivc-ml/sunxm/datasets/mscoco_2014'
 prefixPathVG = '/data5/VG/'
-prefixPathVOC2007 = '/data1/dataset/voc2007/VOCdevkit/VOC2007/'
+prefixPathVOC2007 = '/projectnb/ivc-ml/sunxm/datasets/VOCdevkit/VOC2007/'
 # =============================================================================
 
 # ClassNum of Dataset
