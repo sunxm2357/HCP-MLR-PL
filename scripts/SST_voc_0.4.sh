@@ -40,7 +40,7 @@ interBCEMargin=0.95
 interDistanceWeight=0.05
 interExampleNumber=100
 
-python SST.py \
+CUDA_VISIBLE_DEVICES=0 python SST.py \
     --post ${post} \
     --printFreq ${printFreq} \
     --mode ${mode} \
