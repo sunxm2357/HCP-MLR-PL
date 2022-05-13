@@ -59,9 +59,9 @@ def main():
                  prototypeNum=args.prototypeNum, classNum=args.classNum,
                  isAlphaLearnable=args.isAlphaLearnable, isBetaLearnable=args.isBetaLearnable)
 
-    if args.pretrainedModel != 'None':
-        logger.info("==> Loading pretrained model...")
-        model = load_pretrained_model(model, args)
+    # if args.pretrainedModel != 'None':
+    #     logger.info("==> Loading pretrained model...")
+    #     model = load_pretrained_model(model, args)
 
     if args.resumeModel != 'None':
         logger.info("==> Loading checkpoint...")
