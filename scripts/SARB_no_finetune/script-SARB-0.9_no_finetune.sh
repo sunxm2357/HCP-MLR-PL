@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-#$ -N SARB_0.1
+#$ -N SARB_0.9
 
 #$ -m bea
 
@@ -47,12 +47,12 @@ cd $PROJECT_PATH/sunxm/code/HCP-MLR-PL/
 
 nvidia-smi
 
-post='SARB-COCO-0.1'
+post='SARB-COCO-0.9'
 printFreq=1000
 
 mode='SARB'
 dataset='COCO2014'
-prob=0.1
+prob=0.9
 
 pretrainedModel='./data/checkpoint/resnet101.pth'
 resumeModel='None'
