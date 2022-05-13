@@ -81,7 +81,7 @@ recomputePrototypeInterval=5
 isAlphaLearnable='True'
 isBetaLearnable='True'
 
-ython SARB.py \
+python SARB.py \
     --post ${post} \
     --printFreq ${printFreq} \
     --mode ${mode} \
