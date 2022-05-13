@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 
 from .backbone.resnet import resnet101
+from .backbone.clip_resnet import modified_resnet101
 from .GraphNeuralNetwork import GatedGNN
 from .SemanticDecoupling import SemanticDecoupling
 from .Element_Wise_Layer import Element_Wise_Layer
@@ -18,7 +19,7 @@ class SARB(nn.Module):
 
         super(SARB, self).__init__()
 
-        self.backbone = resnet101()
+        self.backbone = modified_resnet101()
         
         if imageFeatureDim != 2048:
             self.changeChannel = nn.Sequential(nn.Conv2d(2048, imageFeatureDim, kernel_size=1, stride=1, bias=False),
