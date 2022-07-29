@@ -25,6 +25,7 @@ prefixPathBE = '/fsx/sunxm/datasets/big_earth'
 _ClassNum = {'COCO2014': 80,
              'VOC2007': 20,
              'VG': 200,
+            'BigEarth': 17,
             }
 # =============================================================================
 
@@ -70,7 +71,7 @@ def arg_parse(mode):
     parser.add_argument('--printFreq', type=int, default='1000', help='number of print frequency (default: 1000)')
 
     parser.add_argument('--mode', type=str, default='SST', choices=['SST', 'SARB', 'HST'], help='mode of experiment (default: SST)')
-    parser.add_argument('--dataset', type=str, default='COCO2014', choices=['COCO2014', 'VG', 'VOC2007'], help='dataset for training and testing')
+    parser.add_argument('--dataset', type=str, default='COCO2014', choices=['COCO2014', 'VG', 'VOC2007', 'BigEarth'], help='dataset for training and testing')
     parser.add_argument('--prob', type=float, default=0.5, help='hyperparameter of label proportion (default: 0.5)')
 
     parser.add_argument('--pretrainedModel', type=str, default='None', help='path to pretrained model (default: None)')
