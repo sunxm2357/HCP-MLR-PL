@@ -65,7 +65,7 @@ class BigEarth(data.Dataset):
         return index, input, self.changedLabels[index], self.labels[index]
 
     def __len__(self):
-        return len(self.img_names)
+        return len(self.image_list)
 
 
 # =============================================================================
