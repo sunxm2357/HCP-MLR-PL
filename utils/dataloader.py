@@ -9,8 +9,9 @@ import torchvision.transforms as transforms
 from datasets.vg import VG
 from datasets.voc2007 import VOC2007
 from datasets.coco2014 import COCO2014
+from datasets.bigearth import BigEarth
 
-from config import prefixPathCOCO, prefixPathVG, prefixPathVOC2007
+from config import prefixPathCOCO, prefixPathVG, prefixPathVOC2007, prefixPathBE
 
 def get_graph_and_word_file(args, labels):
 
@@ -39,6 +40,9 @@ def get_graph_and_word_file(args, labels):
 
     elif args.dataset == 'VOC2007':
         WordFilePath = './data/voc_devkit/VOC2007/voc07_vector.npy'
+
+    elif args.dataset == 'BigEarth':
+        WordFilePath = './data/big_earth/big_earth.npy'
         
     GraphFile = get_graph_file(labels)
     WordFile = np.load(WordFilePath)
@@ -61,6 +65,11 @@ def get_data_path(dataset):
         prefixPath = prefixPathVOC2007
         train_dir, train_anno, train_label = os.path.join(prefixPath, 'JPEGImages'), os.path.join(prefixPath, 'ImageSets/Main/trainval.txt'), os.path.join(prefixPath, 'Annotations')
         test_dir, test_anno, test_label = os.path.join(prefixPath, 'JPEGImages'), os.path.join(prefixPath, 'ImageSets/Main/test.txt'), os.path.join(prefixPath, 'Annotations')
+
+    elif dataset == 'BigEarth':
+        prefixPath = prefixPathBE
+        train_dir, train_anno, train_label = prefixPath, None, None
+        test_dir, test_anno, test_label = prefixPath,  None, None
 
     return train_dir, train_anno, train_label, \
            test_dir, test_anno, test_label
@@ -111,6 +120,15 @@ def get_data_loader(args):
         test_set = VOC2007('val',
                            test_dir, test_anno, test_label,
                            input_transform=test_data_transform)
+
+    elif args.dataset == 'BigEarth':
+        print("==> Loading BigEarth...")
+        train_set = BigEarth('train',
+                              train_dir, train_anno, train_label,
+                              input_transform=train_data_transform, label_proportion=args.prob)
+        test_set = BigEarth('val',
+                            test_dir, test_anno, test_label,
+                            input_transform=test_data_transform)
 
     train_loader = DataLoader(dataset=train_set,
                               num_workers=args.workers,

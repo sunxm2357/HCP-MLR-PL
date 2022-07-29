@@ -17,6 +17,7 @@ prefixPathCOCO = '/projectnb/ivc-ml/sunxm/datasets/mscoco_2014'
 # prefixPathCOCO = '/research/sunxm/datasets/mscoco_2014'
 prefixPathVG = '/data5/VG/'
 prefixPathVOC2007 = '/research/sunxm/datasets/VOCdevkit/VOC2007/'
+prefixPathBE = '/fsx/sunxm/datasets/big_earth'
 # =============================================================================
 
 # ClassNum of Dataset
