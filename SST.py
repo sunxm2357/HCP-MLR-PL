@@ -83,8 +83,8 @@ def main():
 
     for p in model.backbone.parameters():
         p.requires_grad = False
-    # for p in model.backbone.layer4.parameters():
-    #     p.requires_grad = True
+    for p in model.backbone.layer4.parameters():
+        p.requires_grad = True
     for p in model.backbone.parameters():
         p.requires_grad = True
     optimizer = torch.optim.Adam(filter(lambda p : p.requires_grad, model.parameters()), lr=args.lr, weight_decay=args.weightDecay)
