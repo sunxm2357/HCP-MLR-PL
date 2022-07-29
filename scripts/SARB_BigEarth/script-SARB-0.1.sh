@@ -28,7 +28,7 @@ workers=8
 mixupEpoch=5
 contrastiveLossWeight=0.05
 
-prototypeNum=10
+prototypeNum=7
 recomputePrototypeInterval=5
 
 isAlphaLearnable='True'
