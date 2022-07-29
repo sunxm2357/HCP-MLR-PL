@@ -129,6 +129,8 @@ def get_data_loader(args):
         test_set = BigEarth('val',
                             test_dir, test_anno, test_label,
                             input_transform=test_data_transform)
+        import pdb
+        pdb.set_trace()
 
     train_loader = DataLoader(dataset=train_set,
                               num_workers=args.workers,
