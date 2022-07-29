@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 
 from .backbone.resnet import resnet101
-from .backbone.clip_resnet import modified_resnet101
+# from .backbone.clip_resnet import modified_resnet101
 from .GraphNeuralNetwork import GatedGNN
 from .SemanticDecoupling import SemanticDecoupling
 from .Element_Wise_Layer import Element_Wise_Layer
@@ -18,8 +18,8 @@ class SST(nn.Module):
 
         super(SST, self).__init__()
 
-        # self.backbone = resnet101()
-        self.backbone = modified_resnet101()
+        self.backbone = resnet101()
+        # self.backbone = modified_resnet101()
 
 
         if imageFeatureDim != 2048:

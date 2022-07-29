@@ -60,9 +60,9 @@ def main():
 
     model = SST(GraphFile, WordFile, classNum=args.classNum)
 
-    # if args.pretrainedModel != 'None':
-    #     logger.info("==> Loading pretrained model...")
-    #     model = load_pretrained_model(model, args)
+    if args.pretrainedModel != 'None':
+        logger.info("==> Loading pretrained model...")
+        model = load_pretrained_model(model, args)
 
     if args.resumeModel != 'None':
         logger.info("==> Loading checkpoint...")
