@@ -128,7 +128,7 @@ def Train(train_loader, model, criterion, optimizer, writer, epoch, args):
 
     model.train()
     model.backbone.eval()
-    # model.backbone.layer4.train()
+    model.backbone.layer4.train()
     model.backbone.train()
 
     loss, loss1, loss2, loss3, loss4, loss5 = AverageMeter(), AverageMeter(), AverageMeter(), AverageMeter(), AverageMeter(), AverageMeter()
