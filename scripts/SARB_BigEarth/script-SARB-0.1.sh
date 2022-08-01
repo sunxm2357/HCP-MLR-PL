@@ -16,7 +16,7 @@ startEpoch=0
 stepEpoch=10
 workers=8
 
-batchSize=8
+batchSize=32
 lr=1e-5
 momentum=0.9
 weightDecay=5e-4

@@ -98,7 +98,10 @@ def main():
                 model.computePrototype(train_loader)
                 logger.info('Done!\n')
 
+        start = time.time()
         Train(train_loader, model, criterion, optimizer, writer, epoch, args)
+        logger.info('Time for training = %.2f ' % (time.time() - start))
+
         mAP = Validate(test_loader, model, criterion, epoch, args)
 
         scheduler.step()
