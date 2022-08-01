@@ -101,8 +101,9 @@ def main():
         start = time.time()
         Train(train_loader, model, criterion, optimizer, writer, epoch, args)
         logger.info('Time for training = %.2f ' % (time.time() - start))
-
+        start = time.time()
         mAP = Validate(test_loader, model, criterion, epoch, args)
+        logger.info('Time for test = %.2f ' % (time.time() - start))
 
         scheduler.step()
 
